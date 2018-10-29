@@ -4,17 +4,24 @@ Starting date: 29/10/2018
 Objective: Program that sums even numbers and odd numbers that are minor than 100.
 Ending date: 29/10/2018
  */
-public class E03_SumaSenarsParells {
+import java.util.Scanner;
+public class E04_SumaSenarsParellsUsuari {
     //Declared variables
-    private static final int CONSTANT = 100;
     public static void main(String[] args) {
-        int i, evenNumber = 0, oddNumber = 0;
+        Scanner requestValues = new Scanner (System.in);
+        int i, evenNumber = 0, oddNumber = 0, requestedNumber;
+        boolean correctInteger;
     //Welcome message and request for numbers
+        correctInteger = requestValues.hasNextInt();
+        if (!correctInteger) {
+                System.out.println("That's not an integer, please enter the number correctly.");
+                requestValues.nextLine();
+            } else {
         System.out.println("\nNow we are going to sum even numbers and odd numbers that are minor than 100.");
-        for (i = 1;i < CONSTANT;i++) {
-        if (i%2 == 0) {
+        for (i = 1;i < requestedNumber;i++) {
+            if (i%2 == 0) {
                 evenNumber+= i;
-        } else {
+            } else {
                 oddNumber+= i;
             }
         } System.out.println("\nSum of even numbers:"+ evenNumber +".");

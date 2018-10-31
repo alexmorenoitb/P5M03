@@ -13,18 +13,30 @@ public class E04_SumaSenarsParellsUsuari {
         boolean correctInteger;
     //Welcome message and request for numbers
         correctInteger = requestValues.hasNextInt();
-        if (!correctInteger) {
-                System.out.println("That's not an integer, please enter the number correctly.");
+        if (correctInteger) {
+            requestValues.nextLine();
+            for (i = 1;i < requestedNumber;i++) {
+                requestedNumber = requestValues.nextInt();
                 requestValues.nextLine();
-            } else {
-        System.out.println("\nNow we are going to sum even numbers and odd numbers that are minor than 100.");
-        for (i = 1;i < requestedNumber;i++) {
-            if (i%2 == 0) {
-                evenNumber+= i;
-            } else {
-                oddNumber+= i;
+                if (i%2 == 0) {
+                    evenNumber+= i;
+                } else {
+                    oddNumber+= i;
+                }
             }
-        } System.out.println("\nSum of even numbers:"+ evenNumber +".");
+        } else {
+            System.out.println("That's not an integer, please enter the number correctly.");
+                requestValues.nextLine();
+                System.out.println("\nNow we are going to sum even numbers and odd numbers that are minor than 100.");}
+
+
+
+
+
+
+
+
+         System.out.println("\nSum of even numbers:"+ evenNumber +".");
         System.out.println("\nSum of odd numbers:"+ oddNumber +".");
     }
 }

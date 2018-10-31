@@ -1,8 +1,8 @@
 /*
 Author: Alexander Alfonso Moreno Castro
 Starting date: 29/10/2018
-Objective: Program that sums even numbers and odd numbers that are minor than 100.
 Ending date: 29/10/2018
+Objective: Program that sums even numbers and odd numbers that are minor than a number entered by the user
  */
 import java.util.Scanner;
 public class E04 {
@@ -12,7 +12,8 @@ public class E04 {
         int i, evenNumber = 0, oddNumber = 0, requestedNumber;
         boolean correctInteger;
     //Welcome message and revision that user enters the requested values
-        System.out.println("Now we are going sum odd numbers and even numbers that are minors than the number that you want (it necessary has to be an integer).");
+        System.out.println("\nNow we are going sum odd numbers and even numbers that are minors than the number that you want.");
+        System.out.println("Please enter an integer:");
         do {
             correctInteger = requestValues.hasNextInt();
             if (!correctInteger){
@@ -23,12 +24,11 @@ public class E04 {
             requestedNumber = requestValues.nextInt();
             requestValues.nextLine();
             for (i = 1;i < requestedNumber;i++) {
-                requestedNumber = requestValues.nextInt();
-                requestValues.nextLine();
               if (i%2 == 0) {
                   evenNumber+= i;
               } else {
                   oddNumber+= i;
               }
-    }
+        } System.out.println("\nSum of even numbers:"+ evenNumber +".");
+        System.out.println("\nSum of odd numbers:"+ oddNumber +".");
 }}
